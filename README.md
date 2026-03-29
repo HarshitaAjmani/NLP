@@ -9,4 +9,6 @@ Links =
 https://sbert.net/
 https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
+#Need req.txt 
 
+a

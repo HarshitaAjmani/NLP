@@ -9,14 +9,7 @@ import os
 
 from tabs import search, dataset, evaluation, workflow, training, data_quality
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "Search Demo",
-    "Project Workflow",
-    "Dataset Info",
-    "Data Quality",
-    "Training Summary",
-    "Evaluation Metrics"
-])
+
 
 #Setting up the Streamlit app configuration.
 
@@ -93,7 +86,7 @@ def load_model():
 @st.cache_resource(show_spinner=False)
 def load_model():
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    return SentenceTransformer(model=model, device=device)
+    return SentenceTransformer(model, device=device)
 
 @st.cache_resource(show_spinner=False)
 def load_data():
@@ -112,16 +105,13 @@ with st.spinner("Loading model and search index..."):
 # Header
 st.markdown("""
     <div style='margin-bottom: 8px;'>
-        <span style='font-size: 24px; font-weight: bold;'>🗺️ Semantic Search - Canada Open Data</span>
+        <span style='font-size: 24px; font-weight: bold;'>Semantic Search - Canada Open Data</span>
         <span style='font-size: 13px; color: #888888; margin-left: 12px;'>
             Semantic search over 46,468 Canadian government geospatial datasets · EN + FR
         </span>
     </div>
 """, unsafe_allow_html=True)
 
-st.divider()
-
-# Navigation tabs
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "Search Demo",
     "Project Workflow",
