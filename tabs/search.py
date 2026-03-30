@@ -1,4 +1,3 @@
-# tabs/search.py
 import streamlit as st
 import numpy as np
 
@@ -17,7 +16,7 @@ def render(model, df, index_en, index_fr):
         lang = st.selectbox(
             "Language",
             options=["en", "fr"],
-            format_func=lambda x: "🇨🇦 English" if x == "en" else "🇨🇦 French",
+            format_func=lambda x: "EN English" if x == "en" else "FR French",
             label_visibility="collapsed",
             help="Select which language index to search. For cross-lingual search, type in one language and select the other index."
         )
